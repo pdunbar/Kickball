@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%=  %></title>
+  </head>
+
+  <body>
+    <h1><%___TEAM NAME____%></h1>
+
+    <ul>
+      <% @team.each do |team| %>
+        <li><%= team %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
