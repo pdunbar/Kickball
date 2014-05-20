@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%=  %></title>
+    <title>Basic HTML Page</title>
   </head>
 
   <body>
-    <h1><%___TEAM NAME____%></h1>
-
-    <ul>
-      <% @team.each do |team| %>
-        <li><%= team %></li>
+      <% @rosters.each do |x| %>
+      <p><%= x %></p>
       <% end %>
-    </ul>
   </body>
 </html>
