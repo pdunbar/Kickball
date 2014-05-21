@@ -11,7 +11,6 @@ def load_list
       position: row["position"],
       team: row["team"]
     }
-
   rosters << roster
   end
   rosters
@@ -19,7 +18,7 @@ end
 
 get'/' do
   @rosters = load_list
-  erb :teams
+  erb :index
 end
 
 get '/teams/:team' do
@@ -29,3 +28,12 @@ get '/teams/:team' do
   end
   erb :teams
 end
+
+get '/positions/:position' do
+  @rosters = load_list
+  @roster = @rosters.find do |roster|
+    roster[:position] == params[:position]
+  end
+  erb :positions
+end
+

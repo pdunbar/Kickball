@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Basic HTML Page</title>
+    <title>Teams</title>
   </head>
 
   <body>
-    <ul>
-      <% @rosters.each do |roster| %>
-        <% if roster[:team] == params[:team] %>
-          <li>
-            <%= "#{roster[:first_name]} #{roster[:last_name]} #{roster[:team]}" %>
-          </li>
-        <% end %>
+    <table style="width:300px;text-align:left">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Position</th>
+    </tr>
+    <% @rosters.each do |roster| %>
+      <% if roster[:team] == params[:team] %>
+        <tr>
+          <td><%= "#{roster[:first_name]}" %></td>
+          <td><%= "#{roster[:last_name]}" %></td>
+          <td><%= "#{roster[:position]}" %></td>
+        </tr>
       <% end %>
-    </ul>
+    <% end %>
+    </table>
   </body>
 </html>
-
-
-

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Positions</title>
+  </head>
+
+  <body>
+    <h1>Teams</h1>
+
+    <ul>
+      <% @rosters.each do |roster| %>
+        <li>
+          <a href="<%= url("/teams/#{roster[:team]}") %>">
+            <%= "#{roster[:team]}" %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+    <h1>Positions</h1>
+
+    <ul>
+      <% @rosters.each do |roster| %>
+        <li>
+          <a href="<%= url("/positions/#{roster[:position]}") %>">
+            <%= "#{roster[:position]}" %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
