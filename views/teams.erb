@@ -5,8 +5,17 @@
   </head>
 
   <body>
-      <% @rosters.each do |x| %>
-      <p><%= x %></p>
+    <ul>
+      <% @rosters.each do |roster| %>
+        <% if roster[:team] == params[:team] %>
+          <li>
+            <%= "#{roster[:first_name]} #{roster[:last_name]} #{roster[:team]}" %>
+          </li>
+        <% end %>
       <% end %>
+    </ul>
   </body>
 </html>
+
+
+
