@@ -8,11 +8,10 @@
     <h1>Teams</h1>
 
     <ul>
-      <% @rosters.each do |roster| %>
+      <% @team_list.each do |roster| %>
         <li>
-          <a href="<%= url("/teams/#{roster[:team]}") %>">
-            <%= "#{roster[:team]}" %>
-          </a>
+          <a href="<%= url("/teams/#{roster}") %>">
+          <%= "#{roster}" %></a>
         </li>
       <% end %>
     </ul>
@@ -20,10 +19,10 @@
     <h1>Positions</h1>
 
     <ul>
-      <% @rosters.each do |roster| %>
+      <% @positions_list.each do |roster| %>
         <li>
-          <a href="<%= url("/positions/#{roster[:position]}") %>">
-            <%= "#{roster[:position]}" %>
+          <a href="<%= url("/positions/#{roster}") %>">
+            <%= "#{roster}" %>
           </a>
         </li>
       <% end %>

@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'csv'
-require 'pry'
+require 'shotgun'
 
 def load_list
   rosters =[]
@@ -18,6 +18,20 @@ end
 
 get'/' do
   @rosters = load_list
+  team_list =[]
+  positions_list =[]
+
+  @rosters.each do |roster|
+    if !team_list.include? roster[:team]
+      team_list << roster[:team]
+    end
+    if !positions_list.include? roster[:position]
+      positions_list << roster[:position]
+    end
+  end
+  @team_list = team_list
+  @positions_list = positions_list
+
   erb :index
 end
 
@@ -26,6 +40,7 @@ get '/teams/:team' do
   @roster = @rosters.find do |roster|
     roster[:team] == params[:team]
   end
+  @team = params[:team]
   erb :teams
 end
 

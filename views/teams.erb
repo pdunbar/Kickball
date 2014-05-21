@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Teams</title>
+    <title><%= params[:team] %></title>
   </head>
 
   <body>
+    <h1><%= params[:team]%></h1>
     <table style="width:300px;text-align:left">
     <tr>
       <th>First Name</th>
@@ -21,5 +22,6 @@
       <% end %>
     <% end %>
     </table>
+    <a href="/">--Back--</a>
   </body>
 </html>
